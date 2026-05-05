@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "laravel-en-2026",
+    "tag": { "fr": "Architecture", "en": "Architecture" },
+    "publishedAt": "2026-03-12",
+    "readMinutes": 8,
+    "fr": {
+      "title": "Pourquoi je choisis encore Laravel en 2026",
+      "excerpt": "Tout le monde parle de tRPC et de serverless. J'ai passé six ans à construire des back-ends en Laravel, et je n'ai pas envie de changer pour le bruit.",
+      "body": [
+        { "type": "p", "html": "Le débat autour des stacks back-end en 2026 est saturé de promesses. Edge functions, type-safe RPC, runtimes à froid sub-50 ms. Tout cela existe, et tout cela fonctionne. Mais pour la majorité de mes projets — applications métier, dashboards, marketplaces moyennes — Laravel reste le bon choix. Voici pourquoi." },
+        { "type": "h2", "text": "Le coût du nouveau" },
+        { "type": "p", "html": "Choisir une nouvelle stack, c'est choisir un coût caché : la maintenance des intégrations, la chasse aux régressions, le débogage des cas limites que l'écosystème n'a pas encore rencontrés. Laravel a 14 ans et plus de 70 000 paquets sur Packagist. Quand un client me demande \"est-ce qu'on peut intégrer Stripe Connect avec un onboarding personnalisé ?\", la réponse est oui, en deux jours, parce que quelqu'un l'a déjà fait." },
+        { "type": "h2", "text": "Ce que j'apprécie encore" },
+        { "type": "list", "items": [
+          "Eloquent : la lisibilité d'une couche d'accès aux données reste imbattable pour la majorité des modèles métier.",
+          "Queues + Horizon : le combo le plus simple que je connaisse pour exécuter des jobs lourds avec une UI de monitoring intégrée.",
+          "Pennant + Policies : le contrôle d'accès et les feature flags directement dans le framework, sans dépendance externe."
+        ] },
+        { "type": "p", "html": "Tout cela ne veut pas dire que Laravel est parfait, ni qu'il convient à tous les projets. Mais quand je dois livrer vite, sans surprise, c'est toujours mon premier choix." }
+      ]
+    },
+    "en": {
+      "title": "Why I still pick Laravel in 2026",
+      "excerpt": "Everyone's talking tRPC and serverless. I've spent six years building Laravel back-ends, and I'm not switching for the noise.",
+      "body": [
+        { "type": "p", "html": "The 2026 back-end stack debate is saturated with promises. Edge functions, type-safe RPC, sub-50 ms cold starts. All of that exists, all of that works. But for most of my projects — business apps, dashboards, mid-size marketplaces — Laravel is still the right call. Here's why." },
+        { "type": "h2", "text": "The cost of new" },
+        { "type": "p", "html": "Picking a new stack is picking a hidden cost: maintaining integrations, hunting regressions, debugging edge cases the ecosystem hasn't seen yet. Laravel is 14 years old with 70 000+ packages on Packagist. When a client asks \"can we integrate Stripe Connect with a custom onboarding?\", the answer is yes, in two days, because someone has done it before." },
+        { "type": "h2", "text": "What I still appreciate" },
+        { "type": "list", "items": [
+          "Eloquent: the readability of a data access layer remains unbeatable for most business models.",
+          "Queues + Horizon: the simplest combo I know to run heavy jobs with a built-in monitoring UI.",
+          "Pennant + Policies: access control and feature flags built into the framework, no external dependency."
+        ] },
+        { "type": "p", "html": "None of this means Laravel is perfect or fits every project. But when I need to ship fast, without surprises, it's still my first choice." }
+      ]
+    }
+  },
+  {
+    "slug": "expo-ota-en-production",
+    "tag": { "fr": "Mobile", "en": "Mobile" },
+    "publishedAt": "2026-02-24",
+    "readMinutes": 11,
+    "fr": {
+      "title": "Expo OTA : retour sur 18 mois en production",
+      "excerpt": "Les Over-the-Air updates ont sauvé deux releases critiques cette année. Bilan honnête, avec les pièges et les patterns qui marchent.",
+      "body": [
+        { "type": "p", "html": "Depuis 18 mois, je déploie des applications React Native avec Expo Updates en production. Sur trois projets différents, deux d'entre eux ont eu un crash bloquant en production qui a été corrigé en moins d'une heure grâce à un patch OTA. Sans OTA, on parlait de 24 à 48 heures pour qu'Apple revalide le binaire." },
+        { "type": "h2", "text": "Ce qui marche" },
+        { "type": "p", "html": "Le runtime versioning est ton meilleur ami. Tag chaque release native avec un runtime version explicite, et ne pousse jamais d'OTA cross-runtime. C'est la première règle, et c'est aussi celle que tout le monde finit par enfreindre une fois." },
+        { "type": "h2", "text": "Le piège du rollback" },
+        { "type": "p", "html": "Un OTA peut rollback en bougeant le pointeur de version vers un build précédent. Mais si l'OTA en question a déjà installé un schéma de stockage local incompatible, l'app crashe au démarrage. Toujours coder les migrations de stockage local en idempotent et tolérant à un rollback." }
+      ]
+    },
+    "en": {
+      "title": "Expo OTA: 18 months in production",
+      "excerpt": "Over-the-Air updates saved two critical releases this year. Honest review, with the traps and the patterns that work.",
+      "body": [
+        { "type": "p", "html": "For 18 months, I've shipped React Native apps with Expo Updates in production. Across three different projects, two had a blocking production crash that got fixed in under an hour thanks to an OTA patch. Without OTA we'd be looking at 24-48 hours for Apple to re-review the binary." },
+        { "type": "h2", "text": "What works" },
+        { "type": "p", "html": "Runtime versioning is your best friend. Tag each native release with an explicit runtime version, and never push an OTA cross-runtime. That's the first rule, and it's also the one everyone breaks once." },
+        { "type": "h2", "text": "The rollback trap" },
+        { "type": "p", "html": "An OTA can roll back by moving the version pointer to a previous build. But if that OTA already installed an incompatible local storage schema, the app crashes on launch. Always code local storage migrations idempotently, tolerant to a rollback." }
+      ]
+    }
+  },
+  {
+    "slug": "cadrage-ecrit",
+    "tag": { "fr": "Méthode", "en": "Method" },
+    "publishedAt": "2026-02-08",
+    "readMinutes": 6,
+    "fr": {
+      "title": "Le cadrage écrit, mon meilleur outil commercial",
+      "excerpt": "Un document de cadrage de 6 pages a remplacé tous mes devis détaillés. Voilà comment je le rédige, et pourquoi les clients le préfèrent.",
+      "body": [
+        { "type": "p", "html": "Pendant longtemps, j'ai répondu aux demandes de devis en envoyant un PDF avec une grille tarifaire détaillée : tant pour le front, tant pour le back, tant pour le mobile. Cette approche fonctionnait, mais elle plaçait la conversation sur le mauvais terrain — celui du prix au lieu de celui de la valeur." },
+        { "type": "h2", "text": "Le format" },
+        { "type": "p", "html": "Six pages. Pas plus. Une page de contexte, une page de problème, deux pages de solution proposée, une page de jalons, une page de prix. Le tout signé en bas, daté." },
+        { "type": "p", "html": "Le client lit le document, comprend ce qu'il achète, et signe ou demande un ajustement. C'est court, c'est précis, et ça remplace trois échanges d'emails." }
+      ]
+    },
+    "en": {
+      "title": "Written framing, my best sales tool",
+      "excerpt": "A 6-page framing doc replaced all my detailed quotes. Here's how I write it, and why clients prefer it.",
+      "body": [
+        { "type": "p", "html": "For a long time, I answered quote requests with a PDF and a detailed pricing grid: this much for front-end, this much for back-end, this much for mobile. It worked, but it placed the conversation on the wrong ground — price instead of value." },
+        { "type": "h2", "text": "The format" },
+        { "type": "p", "html": "Six pages. No more. One page of context, one page of problem, two pages of proposed solution, one page of milestones, one page of pricing. Signed at the bottom, dated." },
+        { "type": "p", "html": "The client reads it, understands what they're buying, and signs or asks for an adjustment. It's short, precise, and replaces three email rounds." }
+      ]
+    }
+  },
+  {
+    "slug": "ia-augmente",
+    "tag": { "fr": "Workflow", "en": "Workflow" },
+    "publishedAt": "2026-01-15",
+    "readMinutes": 9,
+    "fr": {
+      "title": "IA-augmenté, sans s'y perdre",
+      "excerpt": "Claude Code, MCP, agents. Comment j'intègre ces outils sans diluer la responsabilité du code livré — qui reste, in fine, la mienne.",
+      "body": [
+        { "type": "p", "html": "Travailler avec un assistant IA dans le terminal, c'est un peu comme avoir un junior compétent qui ne dort jamais. Très utile, jusqu'au jour où il introduit un bug subtil que personne ne remarque pendant trois semaines." },
+        { "type": "h2", "text": "Ma règle non négociable" },
+        { "type": "p", "html": "Je relis chaque ligne. Sans exception. Si je n'ai pas le temps de relire, je ne livre pas. C'est la seule garantie que la qualité du code reste de mon ressort, pas de celui d'un modèle." },
+        { "type": "h2", "text": "Là où l'IA accélère vraiment" },
+        { "type": "list", "items": [
+          "Écriture de tests : la couverture grimpe, et je peux me concentrer sur les cas limites métier.",
+          "Refactor mécanique : renommer, extraire, déplacer — le genre de travail qui prend une heure à la main et 3 minutes en IA-assistée.",
+          "Documentation : générer des READMEs, des changelogs, des notes de release à partir du diff."
+        ] }
+      ]
+    },
+    "en": {
+      "title": "AI-augmented, without losing the thread",
+      "excerpt": "Claude Code, MCP, agents. How I integrate these without diluting responsibility for the shipped code — which stays mine.",
+      "body": [
+        { "type": "p", "html": "Working with an AI assistant in the terminal is a bit like having a competent junior who never sleeps. Very useful, until the day it introduces a subtle bug nobody notices for three weeks." },
+        { "type": "h2", "text": "My non-negotiable rule" },
+        { "type": "p", "html": "I read every line. No exception. If I don't have time to read, I don't ship. That's the only guarantee that code quality stays my responsibility, not a model's." },
+        { "type": "h2", "text": "Where AI actually accelerates" },
+        { "type": "list", "items": [
+          "Writing tests: coverage goes up and I focus on business edge cases.",
+          "Mechanical refactor: rename, extract, move — the kind of work that takes an hour by hand and 3 minutes AI-assisted.",
+          "Documentation: generating READMEs, changelogs, release notes from the diff."
+        ] }
+      ]
+    }
+  }
+]

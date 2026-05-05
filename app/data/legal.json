@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "mentions",
+    "lastUpdated": "2026-05-04",
+    "fr": {
+      "title": "Mentions légales",
+      "summary": "Informations relatives à l'éditeur et à l'hébergeur du site.",
+      "body": [
+        { "type": "p", "html": "Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique (L.C.E.N.), il est porté à la connaissance des utilisateurs du site <strong>opaza.studio</strong> les présentes mentions légales." },
+
+        { "type": "h2", "text": "Éditeur du site" },
+        { "type": "p", "html": "Le site <strong>opaza.studio</strong> est édité par :" },
+        { "type": "list", "items": [
+          "<strong>Ethan Huot</strong>",
+          "Statut : [À COMPLÉTER : auto-entrepreneur / EI / SASU / autre]",
+          "Adresse : [À COMPLÉTER : numéro, rue, code postal, ville]",
+          "SIREN : [À COMPLÉTER : 9 chiffres]",
+          "SIRET : [À COMPLÉTER : 14 chiffres]",
+          "Code APE/NAF : [À COMPLÉTER, par ex. 6201Z — Programmation informatique]",
+          "TVA intracommunautaire : [À COMPLÉTER, ou mention <em>« TVA non applicable, art. 293 B du CGI »</em> si vous êtes en franchise en base]",
+          "Email : <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>",
+          "Téléphone : [À COMPLÉTER, ou retirer cette ligne]"
+        ] },
+
+        { "type": "h2", "text": "Directeur de la publication" },
+        { "type": "p", "html": "Ethan Huot, en sa qualité d'éditeur du site." },
+
+        { "type": "h2", "text": "Hébergeur" },
+        { "type": "p", "html": "Le site est hébergé par :" },
+        { "type": "list", "items": [
+          "<strong>Vercel Inc.</strong>",
+          "440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
+          "Site web : <a href=\"https://vercel.com\" target=\"_blank\" rel=\"noopener noreferrer\">vercel.com</a>"
+        ] },
+
+        { "type": "h2", "text": "Propriété intellectuelle" },
+        { "type": "p", "html": "L'ensemble des éléments composant ce site (textes, graphismes, logos, icônes, images, code source, structure) est la propriété exclusive d'Ethan Huot, sauf mention contraire. Toute reproduction, représentation, modification, publication ou adaptation, totale ou partielle, par quelque procédé que ce soit, est interdite sans autorisation écrite préalable, sous peine de constituer une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle." },
+
+        { "type": "h2", "text": "Responsabilité" },
+        { "type": "p", "html": "L'éditeur s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur le site. Toutefois, il ne peut garantir l'exhaustivité ni l'absence d'erreur, et ne saurait être tenu responsable des dommages directs ou indirects résultant de l'usage de ce site." },
+        { "type": "p", "html": "Le site peut contenir des liens vers des sites tiers. L'éditeur n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu." },
+
+        { "type": "h2", "text": "Données personnelles" },
+        { "type": "p", "html": "Le traitement des données personnelles collectées via ce site est détaillé dans la <a href=\"/fr/legal/privacy\">politique de confidentialité</a>." },
+
+        { "type": "h2", "text": "Droit applicable" },
+        { "type": "p", "html": "Les présentes mentions légales sont régies par le droit français. Tout litige relatif au site relèvera de la compétence exclusive des tribunaux français." },
+
+        { "type": "h2", "text": "Contact" },
+        { "type": "p", "html": "Pour toute question relative aux présentes mentions légales, vous pouvez écrire à : <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>." }
+      ]
+    },
+    "en": {
+      "title": "Legal notice",
+      "summary": "Information about the site's publisher and host.",
+      "body": [
+        { "type": "p", "html": "Pursuant to articles 6-III and 19 of French Law n° 2004-575 of 21 June 2004 for trust in the digital economy (LCEN), the following legal notice is provided to users of <strong>opaza.studio</strong>." },
+
+        { "type": "h2", "text": "Publisher" },
+        { "type": "p", "html": "The site <strong>opaza.studio</strong> is published by:" },
+        { "type": "list", "items": [
+          "<strong>Ethan Huot</strong>",
+          "Legal status: [TO COMPLETE: sole proprietor / EI / SASU / other]",
+          "Address: [TO COMPLETE: street, postal code, city, France]",
+          "SIREN: [TO COMPLETE: 9 digits]",
+          "SIRET: [TO COMPLETE: 14 digits]",
+          "APE/NAF code: [TO COMPLETE, e.g. 6201Z — Computer programming]",
+          "VAT number: [TO COMPLETE, or note <em>“VAT not applicable, French CGI art. 293 B”</em> if under the small-business exemption]",
+          "Email: <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>",
+          "Phone: [TO COMPLETE, or remove this line]"
+        ] },
+
+        { "type": "h2", "text": "Publication director" },
+        { "type": "p", "html": "Ethan Huot, as publisher of the site." },
+
+        { "type": "h2", "text": "Host" },
+        { "type": "p", "html": "The site is hosted by:" },
+        { "type": "list", "items": [
+          "<strong>Vercel Inc.</strong>",
+          "440 N Barranca Avenue #4133, Covina, CA 91723, United States",
+          "Website: <a href=\"https://vercel.com\" target=\"_blank\" rel=\"noopener noreferrer\">vercel.com</a>"
+        ] },
+
+        { "type": "h2", "text": "Intellectual property" },
+        { "type": "p", "html": "All elements composing this site (text, graphics, logos, icons, images, source code, structure) are the exclusive property of Ethan Huot, unless otherwise stated. Any reproduction, representation, modification, publication or adaptation, in whole or in part, by any means whatsoever, is prohibited without prior written authorisation, under penalty of constituting an infringement sanctioned by articles L.335-2 et seq. of the French Intellectual Property Code." },
+
+        { "type": "h2", "text": "Liability" },
+        { "type": "p", "html": "The publisher takes care to ensure the accuracy and timeliness of the information published. However, no guarantee of completeness or absence of error is given, and the publisher cannot be held liable for any direct or indirect damage arising from use of this site." },
+        { "type": "p", "html": "The site may include links to third-party sites. The publisher exercises no control over these and declines any liability for their content." },
+
+        { "type": "h2", "text": "Personal data" },
+        { "type": "p", "html": "Processing of personal data collected through this site is detailed in the <a href=\"/en/legal/privacy\">privacy policy</a>." },
+
+        { "type": "h2", "text": "Applicable law" },
+        { "type": "p", "html": "This legal notice is governed by French law. Any dispute relating to the site falls under the exclusive jurisdiction of the French courts." },
+
+        { "type": "h2", "text": "Contact" },
+        { "type": "p", "html": "For any question regarding this legal notice, please write to: <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>." }
+      ]
+    }
+  },
+  {
+    "slug": "privacy",
+    "lastUpdated": "2026-05-04",
+    "fr": {
+      "title": "Politique de confidentialité",
+      "summary": "Modalités de collecte, d'utilisation et de protection de vos données personnelles.",
+      "body": [
+        { "type": "p", "html": "La présente politique décrit les modalités de collecte, d'utilisation et de protection de vos données à caractère personnel dans le cadre de votre utilisation du site <strong>opaza.studio</strong>. Elle est conforme au Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et à la Loi n° 78-17 du 6 janvier 1978 modifiée." },
+
+        { "type": "h2", "text": "Responsable du traitement" },
+        { "type": "p", "html": "Ethan Huot — opaza.studio. Coordonnées complètes dans les <a href=\"/fr/legal/mentions\">mentions légales</a>. Contact privilégié : <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>." },
+
+        { "type": "h2", "text": "Données collectées" },
+        { "type": "p", "html": "Le site collecte uniquement les données que vous fournissez volontairement via le formulaire de contact :" },
+        { "type": "list", "items": [
+          "votre nom (ou pseudonyme)",
+          "votre adresse email",
+          "le contenu de votre message",
+          "votre fourchette de budget indicative (si renseignée)"
+        ] },
+        { "type": "p", "html": "Aucune autre donnée n'est collectée. Le site n'utilise <strong>aucun cookie</strong>, <strong>aucun outil d'analyse d'audience</strong>, et <strong>aucun traceur tiers</strong>." },
+
+        { "type": "h2", "text": "Finalités et base légale" },
+        { "type": "p", "html": "Les données du formulaire sont traitées dans le seul but de répondre à votre demande de contact et, le cas échéant, d'établir une relation commerciale à votre initiative. La base légale est votre <strong>consentement</strong> (RGPD art. 6.1.a), formalisé par l'envoi du formulaire." },
+
+        { "type": "h2", "text": "Destinataires et sous-traitants" },
+        { "type": "p", "html": "Vos données ne sont communiquées à aucun tiers à des fins commerciales. Les sous-traitants techniques suivants interviennent dans le traitement :" },
+        { "type": "list", "items": [
+          "<strong>Vercel Inc.</strong> (hébergeur, États-Unis) — service de mise à disposition du site. Encadré par les Clauses Contractuelles Types de la Commission européenne et le <em>Data Privacy Framework</em>.",
+          "<strong>Resend Inc.</strong> (envoi d'emails transactionnels, États-Unis) — achemine les messages du formulaire vers la boîte de l'éditeur. Encadré par les Clauses Contractuelles Types et le <em>Data Privacy Framework</em>."
+        ] },
+
+        { "type": "h2", "text": "Durée de conservation" },
+        { "type": "p", "html": "Vos données sont conservées pendant <strong>trois (3) ans</strong> à compter de notre dernier échange, conformément aux recommandations de la CNIL pour la prospection commerciale. À l'issue de ce délai, elles sont supprimées, sauf demande de votre part exprimée auparavant." },
+
+        { "type": "h2", "text": "Vos droits" },
+        { "type": "p", "html": "Conformément aux articles 15 à 22 du RGPD, vous disposez sur vos données des droits suivants :" },
+        { "type": "list", "items": [
+          "droit d'accès et de copie",
+          "droit de rectification",
+          "droit à l'effacement (« droit à l'oubli »)",
+          "droit à la limitation du traitement",
+          "droit d'opposition",
+          "droit à la portabilité",
+          "droit de retirer votre consentement à tout moment",
+          "droit de définir des directives relatives au sort de vos données après votre décès"
+        ] },
+        { "type": "p", "html": "Pour exercer ces droits, écrivez à <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>. Une réponse vous sera apportée dans un délai d'un mois, prolongeable de deux mois en cas de complexité." },
+        { "type": "p", "html": "Vous disposez également du droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (Commission nationale de l'informatique et des libertés) si vous estimez que le traitement de vos données ne respecte pas la réglementation : <a href=\"https://www.cnil.fr/fr/plaintes\" target=\"_blank\" rel=\"noopener noreferrer\">cnil.fr/fr/plaintes</a>." },
+
+        { "type": "h2", "text": "Cookies et traceurs" },
+        { "type": "p", "html": "<strong>Le site opaza.studio n'utilise aucun cookie</strong>, ni traceur, ni outil d'analyse d'audience (Google Analytics, Plausible, etc.), ni pixel publicitaire, ni intégration de réseaux sociaux. Aucune information n'est stockée sur votre terminal par le site, en dehors des éventuels caches techniques de votre navigateur." },
+
+        { "type": "h2", "text": "Sécurité" },
+        { "type": "p", "html": "Le site est servi exclusivement en HTTPS. Les données du formulaire transitent chiffrées (TLS) et ne sont stockées que dans la boîte email de l'éditeur, dans la mesure où elles sont reçues sous forme d'email." },
+
+        { "type": "h2", "text": "Transferts hors Union européenne" },
+        { "type": "p", "html": "Les sous-traitants techniques (Vercel, Resend) sont établis aux États-Unis. Les transferts de données vers ce pays sont encadrés par les <em>Clauses Contractuelles Types</em> adoptées par la Commission européenne et par l'adhésion de ces sous-traitants au <em>Data Privacy Framework</em>." },
+
+        { "type": "h2", "text": "Modifications" },
+        { "type": "p", "html": "La présente politique peut être modifiée pour refléter des évolutions légales, techniques ou organisationnelles. La date de dernière mise à jour figure en bas de cette page. Les modifications substantielles seront portées à votre connaissance par tout moyen approprié." }
+      ]
+    },
+    "en": {
+      "title": "Privacy policy",
+      "summary": "How your personal data is collected, used, and protected.",
+      "body": [
+        { "type": "p", "html": "This policy describes how your personal data is collected, used and protected when you use <strong>opaza.studio</strong>. It complies with EU Regulation 2016/679 of 27 April 2016 (GDPR) and French Law n° 78-17 of 6 January 1978 as amended." },
+
+        { "type": "h2", "text": "Data controller" },
+        { "type": "p", "html": "Ethan Huot — opaza.studio. Full contact details in the <a href=\"/en/legal/mentions\">legal notice</a>. Preferred contact: <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>." },
+
+        { "type": "h2", "text": "Data collected" },
+        { "type": "p", "html": "The site only collects data that you voluntarily provide through the contact form:" },
+        { "type": "list", "items": [
+          "your name (or alias)",
+          "your email address",
+          "the content of your message",
+          "your indicative budget range (if filled in)"
+        ] },
+        { "type": "p", "html": "No other data is collected. The site uses <strong>no cookies</strong>, <strong>no analytics tools</strong>, and <strong>no third-party trackers</strong>." },
+
+        { "type": "h2", "text": "Purpose and legal basis" },
+        { "type": "p", "html": "Form data is processed solely to respond to your contact request and, where applicable, to establish a business relationship at your initiative. The legal basis is your <strong>consent</strong> (GDPR art. 6.1.a), formalised by submitting the form." },
+
+        { "type": "h2", "text": "Recipients and processors" },
+        { "type": "p", "html": "Your data is never shared with third parties for commercial purposes. The following technical processors are involved:" },
+        { "type": "list", "items": [
+          "<strong>Vercel Inc.</strong> (host, United States) — site delivery. Covered by the European Commission's Standard Contractual Clauses and the <em>Data Privacy Framework</em>.",
+          "<strong>Resend Inc.</strong> (transactional email, United States) — routes form messages to the publisher's mailbox. Covered by the Standard Contractual Clauses and the <em>Data Privacy Framework</em>."
+        ] },
+
+        { "type": "h2", "text": "Retention period" },
+        { "type": "p", "html": "Your data is kept for <strong>three (3) years</strong> from our last interaction, in line with CNIL recommendations for commercial prospecting. After this period it is deleted, unless you previously request earlier deletion." },
+
+        { "type": "h2", "text": "Your rights" },
+        { "type": "p", "html": "Under articles 15 to 22 GDPR, you have the following rights over your data:" },
+        { "type": "list", "items": [
+          "right of access and copy",
+          "right of rectification",
+          "right to erasure (\"right to be forgotten\")",
+          "right to restrict processing",
+          "right to object",
+          "right to portability",
+          "right to withdraw consent at any time",
+          "right to set instructions about your data after death"
+        ] },
+        { "type": "p", "html": "To exercise these rights, write to <a href=\"mailto:ethan@opaza.studio\">ethan@opaza.studio</a>. A reply will be provided within one month, extendable by two months in case of complexity." },
+        { "type": "p", "html": "You also have the right to lodge a complaint with the French data protection authority (<strong>CNIL</strong>) if you consider that processing of your data is not compliant: <a href=\"https://www.cnil.fr/fr/plaintes\" target=\"_blank\" rel=\"noopener noreferrer\">cnil.fr/fr/plaintes</a>." },
+
+        { "type": "h2", "text": "Cookies and trackers" },
+        { "type": "p", "html": "<strong>opaza.studio uses no cookies</strong>, no trackers, no audience analytics (Google Analytics, Plausible, etc.), no advertising pixels, and no social network embeds. No information is stored on your device by the site, beyond your browser's standard technical caches." },
+
+        { "type": "h2", "text": "Security" },
+        { "type": "p", "html": "The site is served exclusively over HTTPS. Form data transits encrypted (TLS) and is only stored within the publisher's email inbox, since it is received as email." },
+
+        { "type": "h2", "text": "Transfers outside the EU" },
+        { "type": "p", "html": "Technical processors (Vercel, Resend) are established in the United States. Data transfers to that country are governed by the <em>Standard Contractual Clauses</em> adopted by the European Commission and by these processors' adherence to the <em>Data Privacy Framework</em>." },
+
+        { "type": "h2", "text": "Changes" },
+        { "type": "p", "html": "This policy may be updated to reflect legal, technical or organisational changes. The last-updated date appears at the bottom of this page. Material changes will be communicated by appropriate means." }
+      ]
+    }
+  }
+]
