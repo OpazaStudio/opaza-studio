@@ -5,9 +5,19 @@ import type { Copy } from "../lib/copy";
 
 export function MethodeSticky({ steps }: { steps: Copy["methode"]["steps"] }) {
   const [active, setActive] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 880px)");
+    const sync = () => setIsMobile(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
     const onScroll = () => {
       const el = stageRef.current;
       if (!el) return;
@@ -21,7 +31,26 @@ export function MethodeSticky({ steps }: { steps: Copy["methode"]["steps"] }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, [steps.length]);
+  }, [steps.length, isMobile]);
+
+  if (isMobile) {
+    return (
+      <div className="methode-stack">
+        {steps.map((s) => (
+          <article key={s.n} className="meth-stack-item">
+            <div className="num huge">{s.n}</div>
+            <h3
+              className="h2"
+              style={{ fontSize: "clamp(2rem, 7vw, 3rem)", margin: "0.4rem 0 1rem" }}
+            >
+              {s.title}
+            </h3>
+            <p className="body">{s.body}</p>
+          </article>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div

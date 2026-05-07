@@ -41,6 +41,20 @@ export function Hero({ copy, lang, heroTitleKey }: Props) {
               Laravel · Next.js · Expo
             </div>
           </div>
+          <div className="hero-side-block">
+            <div className="mono" style={{ marginBottom: "0.6rem" }}>
+              {lang === "fr" ? "premier échange" : "first call"}
+            </div>
+            <a
+              href="#contact"
+              className="body hero-side-cta"
+              style={{ color: "var(--fg-strong)", textDecoration: "none" }}
+            >
+              {lang === "fr"
+                ? "Venez discuter de votre projet, sans engagement."
+                : "Come discuss your project, no commitment."}
+            </a>
+          </div>
         </aside>
       </div>
     </header>

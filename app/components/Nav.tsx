@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { Copy, Lang } from "../lib/copy";
 
@@ -14,6 +15,9 @@ const RING_C = 2 * Math.PI * RING_R;
 
 export function Nav({ copy, lang }: Props) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const homePath = `/${lang}`;
+  const isHome = pathname === homePath;
 
   const markRef = useRef<HTMLAnchorElement>(null);
   const discRef = useRef<HTMLButtonElement>(null);
@@ -57,7 +61,7 @@ export function Nav({ copy, lang }: Props) {
           if (!el) continue;
           if (
             el.closest(
-              ".nav-mark, .nav-disc, .nav-rail, .nav-overlay, .cursor, .cursor-trail"
+              ".nav-mark, .nav-disc, .nav-rail, .nav-overlay, .cursor, .cursor-trail, .grain"
             )
           )
             continue;
@@ -70,8 +74,10 @@ export function Nav({ copy, lang }: Props) {
 
       const headerOnDark =
         probe(60, 30) || probe(60, 60) || probe(w - 60, 30) || probe(w - 60, 60);
+      const railRect = railRef.current?.getBoundingClientRect();
+      const railX = railRect ? Math.max(8, railRect.left + railRect.width / 2) : 20;
       const railOnDark =
-        probe(40, h * 0.3) || probe(40, h * 0.5) || probe(40, h * 0.7);
+        probe(railX, h * 0.3) || probe(railX, h * 0.5) || probe(railX, h * 0.7);
 
       headerOnDarkRef.current = headerOnDark;
       markRef.current?.classList.toggle("on-dark", headerOnDark);
@@ -147,9 +153,15 @@ export function Nav({ copy, lang }: Props) {
 
   return (
     <>
-      <a ref={markRef} href="#top" className="nav-mark">
-        Opaza<span className="logo-dot">.</span>
-      </a>
+      {isHome ? (
+        <a ref={markRef} href="#top" className="nav-mark">
+          Opaza<span className="logo-dot">.</span>
+        </a>
+      ) : (
+        <Link ref={markRef} href={homePath} className="nav-mark">
+          Opaza<span className="logo-dot">.</span>
+        </Link>
+      )}
 
       <button
         ref={discRef}

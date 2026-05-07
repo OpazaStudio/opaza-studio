@@ -13,8 +13,15 @@ export function Cursor() {
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
       target.current = { x: e.clientX, y: e.clientY };
-      const el = document.elementFromPoint(e.clientX, e.clientY);
-      onDark.current = !!(el && el.closest && el.closest(".section.dark, .nav.scrolled.on-dark"));
+      const stack = document.elementsFromPoint(e.clientX, e.clientY);
+      let dark = false;
+      for (const el of stack) {
+        if (!el) continue;
+        if (el.closest(".grain, .cursor, .cursor-trail")) continue;
+        dark = !!el.closest(".section.dark, .nav.scrolled.on-dark");
+        break;
+      }
+      onDark.current = dark;
     };
     const onOver = (e: MouseEvent) => {
       const t = e.target as HTMLElement | null;

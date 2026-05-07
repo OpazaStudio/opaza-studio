@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { Nav } from "../components/Nav";
 import { Hero } from "../components/Hero";
 import { Services } from "../components/Services";
 import { Methode } from "../components/Methode";
@@ -21,7 +20,6 @@ export default async function LocalePage({
 
   return (
     <>
-      <Nav copy={copy.nav} lang={locale} />
       <main id="top">
         <Hero copy={copy.hero} lang={locale} heroTitleKey={HERO_TITLE_KEY} />
         <Services copy={copy.services} />

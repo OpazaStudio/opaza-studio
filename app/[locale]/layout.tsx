@@ -3,8 +3,8 @@ import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { Cursor } from "../components/Cursor";
-import { Reveals } from "../components/Reveals";
-import { LOCALES, isLocale, type Lang } from "../lib/copy";
+import { Nav } from "../components/Nav";
+import { COPY, LOCALES, isLocale, type Lang } from "../lib/copy";
 import { SITE_META, SITE_NAME, SITE_URL } from "../lib/site";
 
 const fraunces = Fraunces({
@@ -111,6 +111,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const lang: Lang = locale;
+  const copy = COPY[lang];
 
   return (
     <html
@@ -120,7 +121,7 @@ export default async function LocaleLayout({
       <body>
         <Cursor />
         <div className="grain" />
-        <Reveals />
+        <Nav copy={copy.nav} lang={lang} />
         {children}
       </body>
     </html>

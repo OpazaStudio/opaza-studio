@@ -266,8 +266,6 @@ body.no-grain .grain { display: none; }
 .cursor-trail.on-dark.hot { border-color: #E8946A; }
 body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 
-/* Reveal — initial state visible; entry animation runs via Web Animations API */
-.reveal { opacity: 1; transform: none; }
 
 /* Word cascade for hero */
 .cascade .w { display: inline-block; }
@@ -304,6 +302,12 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
   align-items: center;
   gap: 4rem;
 }
+.marquee-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 240ms;
+}
+.marquee-item a:hover { color: var(--terracotta); }
 .marquee-item .dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--terracotta);
@@ -318,7 +322,7 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .cascade .w { opacity: 1; transform: none; transition: none; }
+  .cascade .w { opacity: 1; transform: none; transition: none; }
   .marquee-track { animation: none; }
 }
 
@@ -390,7 +394,7 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 /* Vertical rail */
 .nav-rail {
   position: fixed;
-  left: var(--gutter);
+  left: clamp(0.5rem, 1.2vw, 1.2rem);
   top: 50%;
   transform: translateY(-50%);
   z-index: 45;
@@ -401,8 +405,8 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
   color: var(--fg-muted);
   transition: color 320ms ease;
 }
-.nav-rail.on-dark { color: rgba(250, 247, 242, 0.55); }
-.nav-rail.on-dark .nav-rail-bar { background: rgba(250, 247, 242, 0.2); }
+.nav-rail.on-dark { color: rgba(250, 247, 242, 0.9); }
+.nav-rail.on-dark .nav-rail-bar { background: rgba(250, 247, 242, 0.3); }
 .nav-rail-top, .nav-rail-bottom {
   writing-mode: vertical-rl;
   letter-spacing: 0.3em;
@@ -539,6 +543,8 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 .hero-main { min-width: 0; }
 .hero-side { display: flex; flex-direction: column; gap: 2.4rem; padding-bottom: 0.6rem; }
 .hero-side-block { border-top: 1px solid var(--rule); padding-top: 1rem; }
+.hero-side-cta { display: inline-block; transition: opacity 0.2s ease; }
+.hero-side-cta:hover { opacity: 0.65; }
 .status-dot {
   display: inline-flex; align-items: center; gap: 0.5rem;
   margin-top: 0.5rem;
@@ -616,15 +622,6 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 /* Services — list */
 .services-list { border-top: 1px solid var(--rule); }
 .svc-row { border-bottom: 1px solid var(--rule); position: relative; }
-.svc-row-sweep {
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: 1px;
-  background: var(--terracotta);
-  transform: scaleX(0);
-  pointer-events: none;
-  z-index: 2;
-}
 .svc-row-head {
   width: 100%;
   display: grid;
@@ -718,15 +715,13 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
   align-items: center;
   padding: 1rem 0;
   text-align: left;
-  border-bottom: 1px solid var(--rule-faint);
   opacity: 0.45;
-  transition: opacity 360ms, padding 360ms, border-color 360ms;
+  transition: opacity 360ms, padding 360ms;
 }
 .meth-sticky-item.done { opacity: 0.65; }
 .meth-sticky-item.active {
   opacity: 1;
   padding-left: 1rem;
-  border-color: var(--terracotta);
 }
 .meth-sticky-label {
   font-family: var(--font-serif);
@@ -744,11 +739,19 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
   pointer-events: none;
 }
 .meth-sticky-panel.on { opacity: 1; transform: translateY(0); pointer-events: auto; }
-@media (max-width: 880px) {
-  .methode-sticky { min-height: auto !important; }
-  .meth-sticky-stage { position: relative; height: auto; padding: 2rem 0; }
-  .meth-sticky-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .meth-sticky-detail { min-height: 320px; }
+
+.methode-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.4rem, 7vw, 3.6rem);
+}
+.meth-stack-item {
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--rule);
+}
+.meth-stack-item:first-child {
+  padding-top: 0;
+  border-top: 0;
 }
 
 .num.huge {
@@ -776,9 +779,11 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
   padding: 1.8rem;
   border: 1px solid var(--rule);
   background: var(--bg-alt);
-  transition: transform 320ms, background 320ms;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 320ms, background 320ms, border-color 320ms;
 }
-.stack-card:hover { transform: translateY(-3px); }
+.stack-card:hover { transform: translateY(-3px); border-color: var(--terracotta); }
 .stack-glyph {
   flex-shrink: 0;
   width: 48px; height: 48px;
@@ -806,10 +811,17 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 .stack-secondary li {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  padding: 0.4rem 0.8rem;
   border: 1px solid var(--rule);
   border-radius: 999px;
   color: var(--fg-muted);
+  transition: border-color 240ms, color 240ms;
+}
+.stack-secondary li:hover { border-color: var(--terracotta); color: var(--fg); }
+.stack-secondary li a {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* À propos */
@@ -947,6 +959,34 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 .journal-row-link:hover .journal-arrow { transform: translateX(6px); color: var(--terracotta); }
 .journal-foot { margin-top: 3rem; }
 
+@media (max-width: 720px) {
+  .journal-row-link {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 1.6rem 0;
+  }
+  .journal-num {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 0;
+    font-size: 0.78rem;
+    margin-bottom: -0.4rem;
+  }
+  .journal-row-body {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .journal-arrow {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 0;
+  }
+  .journal-row-meta {
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+  }
+}
+
 /* Contact */
 .contact-grid {
   display: grid;
@@ -957,66 +997,24 @@ body.no-cursor .cursor, body.no-cursor .cursor-trail { display: none; }
 .contact-cta-block {
   margin-top: 2.4rem;
   display: flex; align-items: center; gap: 1.4rem;
+  flex-wrap: wrap;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--rule);
 }
 .contact-cta { font-size: 0.9rem; padding: 1rem 1.4rem; }
 
-.calendly-mock {
-  margin-top: 2rem;
-  padding: 1.4rem;
-  border: 1px solid var(--rule);
-  background: rgba(250, 247, 242, 0.04);
-  border-radius: 4px;
-}
-.calendly-head {
-  display: flex; justify-content: space-between; align-items: start;
-  margin-bottom: 1.4rem;
-}
-.calendly-title {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--fg-strong);
-}
-.calendly-week { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
-.cal-day {
-  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-  padding: 0.7rem 0.4rem;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  transition: background 240ms, border-color 240ms;
-}
-.cal-day .cal-date {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--fg-strong);
-}
-.cal-day.on { background: var(--terracotta); border-color: var(--terracotta); color: var(--cream); }
-.cal-day.on .cal-date { color: var(--cream); }
-.cal-day:hover { border-color: var(--terracotta); }
-.calendly-slots { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; }
-.cal-slot {
-  padding: 0.6rem 0.3rem;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  color: var(--fg-strong);
-  transition: background 240ms, border-color 240ms, color 240ms;
-}
-.cal-slot.on { background: var(--cream); color: var(--brown-deepest); border-color: var(--cream); }
-.cal-slot:hover { border-color: var(--terracotta); }
-
 .contact-direct { margin-top: 2.4rem; }
 .contact-email {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 300;
   font-style: italic;
   color: var(--terracotta);
   letter-spacing: -0.02em;
   display: inline-block;
   position: relative;
+  max-width: 100%;
+  word-break: break-word;
 }
 .contact-email::after {
   content: ""; position: absolute; left: 0; bottom: 0.1em;

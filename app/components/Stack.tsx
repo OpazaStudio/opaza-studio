@@ -12,7 +12,14 @@ export function Stack({ copy, lang }: { copy: Copy["stack"]; lang: Lang }) {
 
         <div className="stack-primary">
           {copy.primary.map((p) => (
-            <div key={p.name} className="stack-card reveal">
+            <a
+              key={p.name}
+              href={p.url}
+              target="_blank"
+              rel="noopener"
+              className="stack-card reveal"
+              aria-label={`${p.name} — ${lang === "fr" ? "site officiel" : "official site"}`}
+            >
               <StackGlyph name={p.name} />
               <div className="stack-card-body">
                 <div className="stack-card-top">
@@ -21,63 +28,61 @@ export function Stack({ copy, lang }: { copy: Copy["stack"]; lang: Lang }) {
                 </div>
                 <p className="body-sm" style={{ marginTop: "0.4rem" }}>{p.role}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
         <div className="stack-secondary reveal">
           <span className="mono">{lang === "fr" ? "+ outils & intégrations" : "+ tools & integrations"}</span>
           <ul>
-            {copy.secondary.map((s) => <li key={s}>{s}</li>)}
+            {copy.secondary.map((s) => (
+              <li key={s.name}>
+                <a href={s.url} target="_blank" rel="noopener">{s.name}</a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
       <div className="marquee" style={{ marginTop: "5rem" }}>
         <div className="marquee-track">
-          {[...copy.marquee, ...copy.marquee, ...copy.marquee].map((m, i) => (
-            <span key={i} className="marquee-item">
-              {m} <span className="dot" />
-            </span>
-          ))}
+          {[0, 1, 2].flatMap((iter) =>
+            copy.marquee.map((m, i) => {
+              const isDuplicate = iter > 0;
+              return (
+                <span key={`${iter}-${i}`} className="marquee-item">
+                  <a
+                    href={m.url}
+                    target="_blank"
+                    rel="noopener"
+                    aria-hidden={isDuplicate || undefined}
+                    tabIndex={isDuplicate ? -1 : 0}
+                  >
+                    {m.name}
+                  </a>{" "}
+                  <span className="dot" aria-hidden />
+                </span>
+              );
+            })
+          )}
         </div>
       </div>
     </section>
   );
 }
 
+const STACK_GLYPHS: Record<string, string> = {
+  Laravel: "/laravel.svg",
+  "Next.js": "/next.svg",
+  Expo: "/expo.svg",
+};
+
 function StackGlyph({ name }: { name: string }) {
-  if (name === "Laravel") {
-    return (
-      <div className="stack-glyph">
-        <svg viewBox="0 0 40 40" width="40" height="40">
-          <path d="M4 8 L20 4 L36 8 L36 32 L20 36 L4 32 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M20 4 L20 36 M4 8 L36 32 M36 8 L4 32" stroke="currentColor" strokeWidth="0.5" opacity="0.4" />
-        </svg>
-      </div>
-    );
-  }
-  if (name === "Next.js") {
-    return (
-      <div className="stack-glyph">
-        <svg viewBox="0 0 40 40" width="40" height="40">
-          <circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M14 12 L14 28 M14 12 L26 28" stroke="currentColor" strokeWidth="1" fill="none" />
-          <path d="M26 12 L26 24" stroke="currentColor" strokeWidth="1" fill="none" />
-        </svg>
-      </div>
-    );
-  }
-  if (name === "Expo") {
-    return (
-      <div className="stack-glyph">
-        <svg viewBox="0 0 40 40" width="40" height="40">
-          <circle cx="20" cy="20" r="3" fill="currentColor" />
-          <circle cx="20" cy="20" r="9" fill="none" stroke="currentColor" strokeWidth="0.7" />
-          <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.5" />
-        </svg>
-      </div>
-    );
-  }
-  return <div className="stack-glyph" />;
+  const src = STACK_GLYPHS[name];
+  if (!src) return <div className="stack-glyph" />;
+  return (
+    <div className="stack-glyph">
+      <img src={src} alt={`${name} logo`} width={40} height={40} />
+    </div>
+  );
 }

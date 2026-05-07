@@ -29,9 +29,9 @@ export type Copy = {
     eyebrow: string;
     title: string;
     lede: string;
-    primary: { name: string; role: string; v: string }[];
-    secondary: string[];
-    marquee: string[];
+    primary: { name: string; role: string; v: string; url: string }[];
+    secondary: { name: string; url: string }[];
+    marquee: { name: string; url: string }[];
   };
   apropos: {
     eyebrow: string;
@@ -53,8 +53,6 @@ export type Copy = {
     eyebrow: string;
     title: string;
     lede: string;
-    cta: string;
-    ctaSub: string;
     orForm: string;
     form: {
       name: string;
@@ -152,12 +150,36 @@ export const COPY: Record<Lang, Copy> = {
       title: "Une stack <em>resserrée</em>,<br>maîtrisée à fond.",
       lede: "Pas de mode du mois. Trois piliers, choisis pour leur stabilité et leur écosystème. Hébergement et services européens privilégiés — Infomaniak en tête.",
       primary: [
-        { name: "Laravel", role: "back-end, API, métier complexe", v: "v13" },
-        { name: "Next.js", role: "front-end web, App Router", v: "v16" },
-        { name: "Expo", role: "mobile iOS / Android, OTA updates", v: "SDK 55" },
+        { name: "Laravel", role: "back-end, API, métier complexe", v: "v13", url: "https://laravel.com" },
+        { name: "Next.js", role: "front-end web, App Router", v: "v16", url: "https://nextjs.org" },
+        { name: "Expo", role: "mobile iOS / Android, OTA updates", v: "SDK 55", url: "https://expo.dev" },
       ],
-      secondary: ["MySQL", "PostgreSQL", "Tailwind", "FilamentPHP", "Pest", "Storybook", "Stripe", "Redis", "Infomaniak", "Vercel", "GitHub Actions"],
-      marquee: ["Laravel", "Next.js", "Expo", "TypeScript", "Tailwind", "PostgreSQL", "FilamentPHP", "Stripe", "Pest", "Storybook", "Infomaniak"],
+      secondary: [
+        { name: "MySQL", url: "https://www.mysql.com" },
+        { name: "PostgreSQL", url: "https://www.postgresql.org" },
+        { name: "Tailwind", url: "https://tailwindcss.com" },
+        { name: "FilamentPHP", url: "https://filamentphp.com" },
+        { name: "Pest", url: "https://pestphp.com" },
+        { name: "Storybook", url: "https://storybook.js.org" },
+        { name: "Stripe", url: "https://stripe.com" },
+        { name: "Redis", url: "https://redis.io" },
+        { name: "Infomaniak", url: "https://www.infomaniak.com" },
+        { name: "Vercel", url: "https://vercel.com" },
+        { name: "GitHub Actions", url: "https://github.com/features/actions" },
+      ],
+      marquee: [
+        { name: "Laravel", url: "https://laravel.com" },
+        { name: "Next.js", url: "https://nextjs.org" },
+        { name: "Expo", url: "https://expo.dev" },
+        { name: "TypeScript", url: "https://www.typescriptlang.org" },
+        { name: "Tailwind", url: "https://tailwindcss.com" },
+        { name: "PostgreSQL", url: "https://www.postgresql.org" },
+        { name: "FilamentPHP", url: "https://filamentphp.com" },
+        { name: "Stripe", url: "https://stripe.com" },
+        { name: "Pest", url: "https://pestphp.com" },
+        { name: "Storybook", url: "https://storybook.js.org" },
+        { name: "Infomaniak", url: "https://www.infomaniak.com" },
+      ],
     },
     apropos: {
       eyebrow: "à propos",
@@ -202,10 +224,8 @@ export const COPY: Record<Lang, Copy> = {
     contact: {
       eyebrow: "travailler ensemble",
       title: "Un projet <em>en tête</em> ?",
-      lede: "Le plus rapide, c'est un appel de 30 minutes. On voit si le projet a du sens, et si oui, comment on l'attaque.",
-      cta: "Réserver un créneau",
-      ctaSub: "via Calendly · 30 min · gratuit",
-      orForm: "Ou écrivez-moi directement",
+      lede: "Le plus rapide, c'est un message direct. On regarde si le projet a du sens, et si oui, comment on l'attaque.",
+      orForm: "Écrivez-moi",
       form: {
         name: "Votre nom",
         email: "Adresse email",
@@ -220,7 +240,7 @@ export const COPY: Record<Lang, Copy> = {
     footer: {
       sign: "Opaza Studio · La Rochelle, France",
       year: "© 2026 — Tous droits réservés",
-      mention: "Site conçu et développé par Ethan, sans gabarit.",
+      mention: "Site conçu et développé par Opaza Studio.",
     },
   },
 
@@ -305,12 +325,36 @@ export const COPY: Record<Lang, Copy> = {
       title: "A <em>tight</em> stack,<br>mastered deeply.",
       lede: "No flavour-of-the-month. Three pillars, picked for stability and ecosystem.",
       primary: [
-        { name: "Laravel", role: "back-end, APIs, complex domains", v: "v13" },
-        { name: "Next.js", role: "web front-end, App Router", v: "v16" },
-        { name: "Expo", role: "mobile iOS / Android, OTA updates", v: "SDK 55" },
+        { name: "Laravel", role: "back-end, APIs, complex domains", v: "v13", url: "https://laravel.com" },
+        { name: "Next.js", role: "web front-end, App Router", v: "v16", url: "https://nextjs.org" },
+        { name: "Expo", role: "mobile iOS / Android, OTA updates", v: "SDK 55", url: "https://expo.dev" },
       ],
-      secondary: ["MySQL", "PostgreSQL", "Tailwind", "FilamentPHP", "Pest", "Storybook", "Stripe", "Redis", "Infomaniak", "Vercel", "GitHub Actions"],
-      marquee: ["Laravel", "Next.js", "Expo", "TypeScript", "Tailwind", "PostgreSQL", "FilamentPHP", "Stripe", "Pest", "Storybook", "Infomaniak"],
+      secondary: [
+        { name: "MySQL", url: "https://www.mysql.com" },
+        { name: "PostgreSQL", url: "https://www.postgresql.org" },
+        { name: "Tailwind", url: "https://tailwindcss.com" },
+        { name: "FilamentPHP", url: "https://filamentphp.com" },
+        { name: "Pest", url: "https://pestphp.com" },
+        { name: "Storybook", url: "https://storybook.js.org" },
+        { name: "Stripe", url: "https://stripe.com" },
+        { name: "Redis", url: "https://redis.io" },
+        { name: "Infomaniak", url: "https://www.infomaniak.com" },
+        { name: "Vercel", url: "https://vercel.com" },
+        { name: "GitHub Actions", url: "https://github.com/features/actions" },
+      ],
+      marquee: [
+        { name: "Laravel", url: "https://laravel.com" },
+        { name: "Next.js", url: "https://nextjs.org" },
+        { name: "Expo", url: "https://expo.dev" },
+        { name: "TypeScript", url: "https://www.typescriptlang.org" },
+        { name: "Tailwind", url: "https://tailwindcss.com" },
+        { name: "PostgreSQL", url: "https://www.postgresql.org" },
+        { name: "FilamentPHP", url: "https://filamentphp.com" },
+        { name: "Stripe", url: "https://stripe.com" },
+        { name: "Pest", url: "https://pestphp.com" },
+        { name: "Storybook", url: "https://storybook.js.org" },
+        { name: "Infomaniak", url: "https://www.infomaniak.com" },
+      ],
     },
     apropos: {
       eyebrow: "about",
@@ -355,10 +399,8 @@ export const COPY: Record<Lang, Copy> = {
     contact: {
       eyebrow: "working together",
       title: "Got a <em>project</em>?",
-      lede: "Fastest path is a 30-minute call. We see if it makes sense, and if so, how to attack it.",
-      cta: "Book a slot",
-      ctaSub: "via Calendly · 30 min · free",
-      orForm: "Or write to me directly",
+      lede: "Fastest path is a direct message. We see if the project makes sense, and if so, how to attack it.",
+      orForm: "Write to me",
       form: {
         name: "Your name",
         email: "Email address",

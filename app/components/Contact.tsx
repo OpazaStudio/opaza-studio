@@ -1,5 +1,4 @@
 import type { Copy, Lang } from "../lib/copy";
-import { CalendlyMock } from "./CalendlyMock";
 import { ContactForm } from "./ContactForm";
 
 export function Contact({
@@ -22,20 +21,9 @@ export function Contact({
             {copy.lede}
           </p>
 
-          <div className="contact-cta-block">
-            <a href="#" className="btn btn-primary contact-cta">
-              <span className="dot" style={{ background: "var(--cream)" }} />
-              {copy.cta}
-              <span style={{ marginLeft: "0.4rem" }}>→</span>
-            </a>
-            <span className="mono">{copy.ctaSub}</span>
-          </div>
-
-          <CalendlyMock lang={lang} />
-
           <div className="contact-direct">
             <div className="mono" style={{ marginBottom: "0.4rem" }}>
-              {lang === "fr" ? "ou par email" : "or by email"}
+              {lang === "fr" ? "écrivez-moi directement" : "write to me directly"}
             </div>
             <a href={"mailto:" + copy.direct} className="contact-email">
               {copy.direct}
